@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">Forms Handling and Validation</mat-toolbar>
+<hr/>
+
+<form (submit) = "onAddPost(postForm) " #postForm = "ngForm">
+<mat-card>
+  <mat-form-field>
+    <h1>Your Name</h1>
+    <input matInput minlength="3" type = "text" required #title = "ngModel" ngModel name = "title">
+    <mat-error *ngIf = "title.invalid">Please enter a Post Title</mat-error>
+  </mat-form-field>
+<br>
+  <mat-form-field>
+    <h1>Your Discription</h1>
+    <textarea matInput #content ="ngModel"rows = "6" required ngModel name = "content"></textarea>
+
+    <mat-error *ngIf = "content.invalid">Please enter Desciption</mat-error>
+  </mat-form-field><br>
+  <button mat-raised-button color="primary" type="submit">Save Post </button>
+</mat-card>
+
+
+</form>
+'
